@@ -4,26 +4,33 @@
      <div class="header1">
      <div class="avator"></div>
      <div class="desc">
-       <span class="desc1">客户您好，我是李牛逼</span> 
-       <span class="desc2">邀请您申请大数时代-XXX</span>
+       <div class="desc1">客户您好，我是李牛逼</div> <br>
+       <div class="desc2">邀请您申请大数时代-XXX</div>
      </div>
      </div>
    </div>
-   <haha/>
-   <xia/>
-
+ 
+ <div class="main">
+   <div class="left">
+   <div class="logo"></div>
+   </div>
+   <div class="right">
+   <div class="title"></div>
+   <div class="info"></div>
+   <div class="rate"></div>
+   <div class="rate1"></div>
+   </div>
+  </div>
   </div>
 </template>
 
 <script>
-import haha from './haha'
-import xia from './xia'
+
 
 export default {
   name: 'HelloWorld',
   components:{
-    haha,
-    xia,
+   
   },
   data () {
     return {
@@ -35,40 +42,81 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
 
-.header{
-  width: 62.5rem;
-  height: 25.25rem;
-  background:rgba(242,243,245,1);
+@function p2r($size){
+    @return ($size/32)*1rem;
 }
-.header1{
-  padding-top: 4rem;
-  padding-left: 10rem;
-  display: flex;
-  flex-direction: row;
-}
-.avator{
-  width:10.25rem;
-  height:10.25rem;
-   border-radius:50%;
-   border: 1px solid black;
-   padding-right: 3.5rem;
-}
-.desc{
-   padding-top: 1rem;
-   margin-left: 3rem;
-   font-size:2.67rem;
-   font-family:PingFang SC;
-   font-weight:500;
-   color:rgba(51,51,51,1);
-}
-.desc1{
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-.desc2{
-  display: inline-block;
 
+.hello{
+  .main{
+    width:p2r(690);
+    height:p2r(263);
+    background:rgba(255,255,255,1);
+    box-shadow:p2r(0) p2r(6) p2r(8) p2r(0) rgba(35,35,35,0.07);
+    border-radius:p2r(18);
+    
+    
+    .left{
+
+      .logo{
+
+      }
+    }
+    .right{
+
+      .title{
+
+      }
+      .info{
+
+      }
+      .rate{
+
+      }
+      .rate1{
+
+      }
+    }
+  }
+  .header{
+    width: p2r(750);
+    height: p2r(303) !important; 
+     background:rgba(242,243,245,1);
+    .header1{
+      display: flex;
+      flex-direction: row; 
+      position: absolute;
+      top: p2r(46);
+      left: p2r(80);
+      .avator{
+        width: p2r(123);
+        height: p2r(123);
+        border-radius: 50%;
+        border: p2r(1) solid black;
+      }
+      .desc{
+        margin-top: p2r(20);
+        font-size:p2r(32);
+        padding-left: p2r(32);
+        font-family:PingFang SC;
+        font-weight:500;
+        color:rgba(51,51,51,1);
+        .desc1{
+         padding-bottom: p2r(11);
+         display: inline-block;
+         
+        }
+        .desc2{
+         
+          display: inline-block;
+         
+        }
+      }
+    }
+  }
 }
+
+
+
 </style>

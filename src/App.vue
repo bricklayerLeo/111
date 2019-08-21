@@ -11,25 +11,12 @@ export default {
 }
 </script>
 
-<style>
-html,body{
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  
+<style lang="scss" scoped>
+@function p2r($size){
+    @return ($size/32)*1rem;
 }
-html{
-font-size: 12px;
-}
-#app{
- 
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
+
+
+
+
 </style>
