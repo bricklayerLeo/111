@@ -35,29 +35,55 @@
   </div>
 
  <div class="footer">
-    <input class="shuru" placeholder="请输入您的姓名" type="text">
-    <input class="shuru"   placeholder="请输入您的手机号" type="text">
-    <input class="shuru"  placeholder="请输入验证码"   type="text">     
-    <input class="submit" type="button"  value="提交">
+    <input class="shuru" placeholder="请输入您的姓名" v-model="form.name"   type="text">
+    <input class="shuru"   placeholder="请输入您的手机号" v-model="form.phone"   type="text">
+    <input class="shuru"  placeholder="请输入验证码" v-model="form.code"  type="text">     
+    <input class="submit" @click="submit" type="submit"  value="提交">
     <p class="agreement">点击按钮表示同意<a href="">《用户协议》</a> </p>
+
+
+    <form class="cmxform" id="commentForm" method="get" action="">
+
+</form>
  </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'HelloWorld',
   components:{
    
   },
+  
   data () {
     return {
-     
+      form:{
+      name:'',
+      phone:'',
+      code:''
+      }
     }
+  },
+  mounted(){
+   
+  },
+  methods:{
+     async submit(){
+   
+      const res = await axios.post('https://jsonplaceholder.typicode.com/posts',this.form)
+      console.log(res.data)
+      this.form={}
+     
+     },
+    
   }
   
 }
 </script>
+
 <style lang="scss" scoped>
 
 @function p2r($size){
